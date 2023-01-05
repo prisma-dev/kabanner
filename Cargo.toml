@@ -1,0 +1,2 @@
+[workspace]
+members = ["kb-api", "kb-migrations", "kb-entities"]

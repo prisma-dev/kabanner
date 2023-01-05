@@ -1,0 +1,13 @@
+[package]
+name = "kb-api"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.68"
+async-trait = "0.1.60"
+rocket = { version = "0.5.0-rc.2", features = ["json"] }
+sea-orm = { version = "0.10.6", features = ["runtime-tokio-rustls", "sqlx-mysql"] }
+sea-orm-rocket = "0.5.2"
+tokio = { version = "1.23.1", features = ["full"] }
+kb-entities = { path = "../kb-entities" }

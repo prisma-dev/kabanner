@@ -1,0 +1,2 @@
+[default.databases.sea_orm]
+url = "mysql://root:example@0.0.0.0:3306/kabanner"
