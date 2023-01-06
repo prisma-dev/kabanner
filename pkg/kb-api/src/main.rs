@@ -1,3 +1,4 @@
+mod error;
 mod pool;
 mod routes;
 
@@ -11,6 +12,7 @@ async fn main() -> Result<()> {
     let _rocket = rocket::build()
         .attach(DatabaseHandle::init())
         .mount("/users", routes::user::routes())
+        .mount("/boards", routes::board::routes())
         .launch()
         .await?;
     Ok(())

@@ -11,3 +11,4 @@ sea-orm = { version = "0.10.6", features = ["runtime-tokio-rustls", "sqlx-mysql"
 sea-orm-rocket = "0.5.2"
 tokio = { version = "1.23.1", features = ["full"] }
 kb-entities = { path = "../kb-entities" }
+chrono = "0.4.23"
