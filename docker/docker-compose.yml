@@ -1,0 +1,32 @@
+version: "3"
+networks:
+  kb:
+volumes:
+  kb-mariadb:
+services:
+  api:
+    container_name: kb-api
+    build:
+      dockerfile: ./docker/Dockerfile
+      context: ..
+    ports:
+      - 8000:8000
+    volumes:
+      - ../Rocket.toml:/app/Rocket.toml
+    networks:
+      - kb
+    depends_on:
+      - mariadb
+
+  mariadb:
+    container_name: kb-mariadb
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=example
+      - MARIADB_DATABASE=kabanner
+    ports:
+      - 3306:3306
+    volumes:
+      - kb-mariadb:/var/lib/mysql
+    networks:
+      - kb

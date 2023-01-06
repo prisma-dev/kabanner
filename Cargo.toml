@@ -1,2 +1,2 @@
 [workspace]
-members = ["kb-api", "kb-migrations", "kb-entities"]
+members = ["pkg/kb-api", "pkg/kb-migrations", "pkg/kb-entities"]
